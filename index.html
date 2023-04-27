@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="nav-brand">Name variations</h1>
+    </nav>
+    
+    <main class="container">
+        <div>
+            <label class="label" for="component-name">Enter your name</label>
+            <input type="text" class="input" placeholder="Your name" id="your-name" autocomplete="off">
+        </div>
+    
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th width="200px">Variation</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Number of characters</td>
+                    <td id="answer1"></td>
+                </tr>
+                <tr>
+                    <td>Lower case</td>
+                    <td id="answer2"></td>
+                </tr>
+                <tr>
+                    <td>Upper case</td>
+                    <td id="answer3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>   
+
+    <script>
+
+        /** @param {string} name */
+ function getNumberOfChars(name) {
+    // return the number of characters in: name
+    return name.length
+}
+
+
+/** @param {string} name */
+ function getLower(name) {
+    // return name all in lower case (example: "ABC" becomes "abc")
+    return name.toLowerCase()
+}
+
+/** @param {string} name */
+ function getUpper(name) {
+    // return name all in upper case (example: "abc" becomes "ABC")
+    return name.toUpperCase()
+}
+
+let answer1 = document.querySelector("#answer1")
+let answer2 = document.querySelector("#answer2")
+let answer3 = document.querySelector("#answer3")
+
+let name = document.querySelector("#your-name")
+
+name.addEventListener("keyup", () => {
+    answer1.textContent = getNumberOfChars(name.value)
+    answer2.textContent = getLower(name.value)
+    answer3.textContent = getUpper(name.value)
+});
+
+   
+
+    </script>
+    
+</body>
+</html>
