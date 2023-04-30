@@ -9,23 +9,31 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1 class="nav-brand">Name variations</h1>
+        <h1 class="nav-brand">Name variations</h1>        
     </nav>
+
+  
+
+    
     
     <main class="container">
         <div>
             <label class="label" for="component-name">Enter your name</label>
             <input type="text" class="input" placeholder="Your name" id="your-name" autocomplete="off">
         </div>
-    
+      
         <table class="table" border="1">
             <thead>
                 <tr>
                     <th width="200px">Variation</th>
                     <th>Result</th>
                 </tr>
+
+                
             </thead>
+            
             <tbody>
+                
                     <tr>
                         <td>Number of characters</td>
                         <td id="answer1"></td>
@@ -50,7 +58,11 @@
                         <td>Capitalize</td>
                         <td id="answer6"></td>
                     </tr>
+                    
                 </tbody>
+             
+                </main>
+                
         </table>
     </main>
    
@@ -94,8 +106,6 @@ function getUpper(name) {
     return name[0].toUpperCase() + name.substring(1).toLowerCase();
 }
 
-
-
 const answer1 = document.querySelector("#answer1");
 const answer2 = document.querySelector("#answer2");
 const answer3 = document.querySelector("#answer3");
@@ -119,7 +129,8 @@ name.addEventListener("keyup", () => {
         answer6.textContent = "";
     }
 });
-   
+
+
 
     </script>
     
